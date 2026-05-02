@@ -1,0 +1,213 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #2c3e50;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+/* HERO */
+
+.hero {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../assets/images/room.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* BUTTON (same everywhere) */
+.btn {
+    background: #f39c12;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e67e22;
+}
+
+/* ABOUT */
+
+.about {
+    padding: 60px 20px;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+}
+
+.about-card {
+    max-width: 700px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.about p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* LOGOUT BUTTON */
+#logoutBtn {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.2s;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#logoutBtn:hover {
+    color: #f39c12;
+}
+.ham-links{
+    display: none;
+}
+.hamburger{
+    display: none;
+}
+@media (max-width: 700px) {
+
+    /* Hide desktop menu */
+    .nav-links {
+        display: none;
+    }
+
+    /* Hamburger */
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        z-index: 1001;
+        cursor: pointer;
+    }
+
+    .hamburger svg {
+        width: 32px;
+        height: 32px;
+        filter: invert(1);
+    }
+
+    /* Mobile Menu */
+    .ham-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        /* 🔥 better than full width */
+        height: 100vh;
+        background: #1e2a35;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* Active (slide in) */
+    .ham-links.active {
+        right: 0;
+    }
+
+    /* Links */
+    .ham-links li {
+        list-style: none;
+    }
+
+    .ham-links li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .ham-links li a:hover {
+        color: #00bcd4;
+    }
+}

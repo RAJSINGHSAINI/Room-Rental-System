@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/message.css">
+</head>
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 50px;
+        position: sticky;
+        top: 0;
+        background: #2c3e50;
+        color: white;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+    }
+
+    .nav-links a:hover {
+        color: #f39c12;
+    }
+
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f6f7fb;
+        margin: 0;
+    }
+
+    .container {
+        width: 900px;
+        margin: 30px auto;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+        margin-bottom: 15px;
+    }
+
+    input,
+    textarea {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+
+    textarea {
+        width: 100%;
+
+    }
+
+    textarea {
+        height: 80px;
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background: #ff5a5f;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #e04848;
+    }
+
+    /* Image Preview */
+    .preview {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .preview img {
+        width: 100px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+
+    /*  Navbar */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 6px 10px;
+        background: #2c3e50;
+        border-radius: 6px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    #home-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .home-image img {
+        height: 180px;
+    }
+
+    .rented-room {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .wrap-up {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .cover-image img {
+        height: auto;
+    }
+
+    .rent-info {
+        position: static;
+    }
+
+
+    .stat-box {
+        width: 100%;
+    }
+}
+
+
+    @media (max-width: 700px) {
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+        margin: 0px;
+    }
+
+    .see-more {
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .home-content {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .home-info {
+        gap: 6px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        font-size: 13px;
+        padding: 7px;
+    }
+
+    .modal-box {
+        width: 90%;
+    }
+    .container {
+        width: 100%;
+        margin: 15px 0;
+        padding: 0px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* CARD */
+    .card {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    /* INPUTS */
+    input,
+    textarea {
+        width: 100%;
+        font-size: 14px;
+        padding: 0 5px;
+        border-radius: 5px;
+    }
+
+    textarea {
+        height: 70px;
+    }
+
+    /* GRID FIX → STACK */
+    .grid-2,
+    .grid-3 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* BUTTON */
+    .btn {
+        font-size: 15px;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    /* IMAGE PREVIEW */
+    .preview {
+        gap: 8px;
+    }
+
+    .preview img {
+        width: 80px;
+        height: 70px;
+    }
+
+    /* AVAILABILITY */
+    .flex {
+        justify-content: space-between;
+        font-size: 14px;
+    }
+}
+</style>
+
+<body>
+    <div class="navbar">
+        <h2 class="logo">Room Rental</h2>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../Profile/profile.html">Profile</a>
+            <a id="logout" href="#">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Edit Your Property</h1>
+
+        <form enctype="multipart/form-data" id="editForm">
+
+            <!-- BASIC INFO -->
+            <div class="card">
+                <h3>Basic Info</h3>
+                <div class="grid-2">
+                    <input name="title" type="text" id="title" placeholder="Title" required>
+                    <input name="name" type="text" id="name" placeholder="Owner Name" required>
+                    <input name="pricePerNight" type="number" id="price" placeholder="Price per Night" required>
+                </div>
+                <textarea id="description" name="description" placeholder="Description" required></textarea>
+            </div>
+
+            <!-- ADDRESS -->
+            <div class="card">
+                <h3>Address</h3>
+                <div class="grid-2">
+                    <input name="street" type="text" id="street" placeholder="Street">
+                    <input name="city" type="text" id="city" placeholder="City">
+                    <input name="state" type="text" id="state" placeholder="State">
+                    <input name="pincode" type="text" id="pincode" placeholder="Pincode">
+                    <input name="contact" type="email" id="contact" placeholder="Contact Email">
+                </div>
+            </div>
+
+            <!-- ROOM DETAILS -->
+            <div class="card">
+                <h3>Room Details</h3>
+                <div class="grid-3">
+                    <input type="number" name="maxGuests" id="guests" placeholder="Guests">
+                    <input type="number" name="bedrooms" id="bedrooms" placeholder="Bedrooms">
+                    <input type="number" name="bathrooms" id="bathrooms" placeholder="Bathrooms">
+                </div>
+            </div>
+
+            <!-- IMAGES -->
+            <div class="card">
+                <h3>Images</h3>
+
+                <label>Cover Image</label>
+                <input type="file" name="coverImage" id="coverImage">
+
+                <div id="coverPreview" class="preview"></div>
+
+                <label>Other Images</label>
+                <input type="file" id="images" name="images" multiple>
+
+                <div id="imagesPreview" class="preview"></div>
+            </div>
+
+            <!-- AVAILABILITY -->
+            <div class="card flex">
+                <label>
+                    <input name="available" type="checkbox" id="available"> Available
+                </label>
+            </div>
+
+            <button type="submit" class="btn">Update Room</button>
+
+        </form>
+    </div>
+    <div id="toast-container"></div>
+</body>
+<script src="../../JavaScript/message.js"></script>
+<script src="../../JavaScript/rentRooms/editRooms.js"></script>
+
+</html>

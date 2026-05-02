@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/message.css">
+    <link rel="stylesheet" href="../../CSS/Index/index.css">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        /* HERO FIX (NO QUALITY LOSS) */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 400px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.75);
+        }
+
+        /* overlay */
+        .hero-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 40px;
+            min-width: 300px;
+            left: 60px;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            opacity: 0.9;
+        }
+
+        /* LAYOUT */
+        .container {
+            max-width: 1300px;
+            margin: auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+
+        /* LEFT */
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 160px;
+            gap: 12px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+            transition: 0.3s ease;
+        }
+
+        .gallery img:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+            height: 100%;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.04);
+        }
+
+        .details {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .meta {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 25px;
+            margin-top: 15px;
+            color: #64748b;
+            font-size: 15px;
+        }
+        .owner-info{
+            display: flex;
+            flex-direction: column;
+        }
+.home-info span{
+    margin-right: 10px;
+}
+        .right {
+            position: relative;
+        }
+
+        .booking {
+            position: sticky;
+            top: 100px;
+            padding: 30px;
+            border-radius: 18px;
+            background: white;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .price {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: #2c3e50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .btn:hover {
+            background: #64748b;
+            transform: translateY(-2px);
+        }
+
+        @media(max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content {
+                left: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">RoomRental</div>
+
+        <ul class="nav-links">
+
+            <li><a href="../index.html">About</a></li>
+
+            <li><a href="/client/HTML/ListedRooms/listed-rooms.html">Listed Rooms</a></li>
+
+            <li><a href="/client/HTML/Bookings/bookings.html" class="protected">My Bookings</a></li>
+
+            <li><a href="/client/HTML/Wishlist/wishlist.html" class="protected">Wishlist</a></li>
+
+            <li><a href="/client/HTML/Rent Rooms/rent-room.html" class="protected">Rent Your Room</a></li>
+
+            <li class="authLink">
+                <a href="/client/HTML/Register/register.html">Login / Signup</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg">
+            <img id="coverImage">
+        </div>
+
+        <div class="hero-content">
+            <h1 id="title"></h1>
+            <p id="location"></p>
+        </div>
+    </section>
+
+    <!-- MAIN -->
+    <div class="container">
+
+        <!-- LEFT -->
+        <div class="left">
+
+            <!-- IMAGE GALLERY -->
+            <div class="gallery" id="gallery"></div>
+
+            <div class="details">
+                <h2>Description</h2>
+                <p id="description"></p>
+
+                <div class="meta">
+                    <div class="home-info">
+
+                        <span>🛏 <span id="bedrooms"></span></span>
+                        <span>🛁 <span id="bathrooms"></span></span>
+                        <span>👥 <span id="guests"></span></span>
+                    </div>
+                    <div class="owner-info">
+                        <span>Owner: <span id="name"></span></span>
+                        <span>Contact: <span id="contact"></span></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+            <div class="booking">
+                <div class="price" id="price"></div>
+                <button id="book-btn" class="btn">Book Now</button>
+            </div>
+        </div>
+
+    </div>
+<div id="toast-container"></div>
+</body>
+<script src="../../JavaScript/message.js"></script>
+<script src="../../JavaScript/Index/auth-ui.js"></script>
+<script src="../../JavaScript/Rooms/room.js"></script>
+
+</html>

@@ -1,0 +1,107 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Owner Flowchart">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Start -->
+        <mxCell id="start" value="Start" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="100" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Login -->
+        <mxCell id="login" value="Owner Login" style="rectangle;" vertex="1" parent="1">
+          <mxGeometry x="350" y="100" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Decision -->
+        <mxCell id="d1" value="Login Successful?" style="rhombus;" vertex="1" parent="1">
+          <mxGeometry x="350" y="200" width="200" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Retry -->
+        <mxCell id="retry" value="Retry Login" style="rectangle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="320" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Dashboard -->
+        <mxCell id="dashboard" value="Owner Dashboard" style="rectangle;" vertex="1" parent="1">
+          <mxGeometry x="400" y="320" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Add Home -->
+        <mxCell id="add" value="Add New Home" style="rectangle;" vertex="1" parent="1">
+          <mxGeometry x="400" y="420" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Manage Homes -->
+        <mxCell id="manage" value="Update/Delete Home" style="rectangle;" vertex="1" parent="1">
+          <mxGeometry x="400" y="520" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- View Bookings -->
+        <mxCell id="booking" value="View Bookings" style="rectangle;" vertex="1" parent="1">
+          <mxGeometry x="650" y="420" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Update Booking -->
+        <mxCell id="update" value="Update Booking Status" style="rectangle;" vertex="1" parent="1">
+          <mxGeometry x="650" y="520" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- End -->
+        <mxCell id="end" value="End" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="420" y="650" width="100" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+
+        <mxCell edge="1" source="start" target="login" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="login" target="d1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="d1" target="dashboard" parent="1" value="Yes">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="d1" target="retry" parent="1" value="No">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="retry" target="login" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="dashboard" target="add" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="add" target="manage" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="dashboard" target="booking" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="booking" target="update" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="manage" target="end" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="update" target="end" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

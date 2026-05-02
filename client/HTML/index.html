@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Room Rental System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../CSS/message.css">
+    <link rel="stylesheet" href="../CSS/Index/index.css">
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            background: url("../Assets/assets.png") no-repeat center center/cover;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /* dark overlay */
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">RoomRental</div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">About</a></li>
+
+            <li><a href="/client/HTML/ListedRooms/listed-rooms.html">Listed Rooms</a></li>
+
+            <li><a href="/client/HTML/myBooking/bookings.html" class="protected">My Bookings</a></li>
+
+            <li><a href="/client/HTML/Wishlist/wishlist.html" class="protected">Wishlist</a></li>
+
+            <li><a href="/client/HTML/Rent Rooms/rent-room.html" class="protected">Rent Your Room</a></li>
+
+            <li class="authLink">
+                <a href="/client/HTML/Register/register.html">Login / Signup</a>
+            </li>
+
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <path
+                    d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z" />
+            </svg>
+        </div>
+            <ul class="ham-links">
+
+                <li><a href="index.html">About</a></li>
+
+                <li><a href="/client/HTML/ListedRooms/listed-rooms.html">Listed Rooms</a></li>
+
+                <li><a href="/client/HTML/myBooking/bookings.html" class="protected">My Bookings</a></li>
+
+                <li><a href="/client/HTML/Wishlist/wishlist.html" class="protected">Wishlist</a></li>
+
+                <li><a href="/client/HTML/Rent Rooms/rent-room.html" class="protected">Rent Your Room</a></li>
+
+                <li class="authLink-ham">
+                    <a href="/client/HTML/Register/register.html">Login / Signup</a>
+                </li>
+
+            </ul>
+    </nav>
+
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+            <h1>Find Your Perfect Room</h1>
+
+            <p>Rent rooms easily or list your own property for others.</p>
+
+            <a href="/client/HTML/ListedRooms/listed-rooms.html" class="btn">Browse Rooms</a>
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about">
+
+        <div class="about-card">
+
+            <h2>About Us</h2>
+
+            <p>
+                Room Rental System is a platform where people can easily find rooms for rent
+                and property owners can list their homes.
+            </p>
+
+            <p>
+                Whether short-term or long-term, find the best rooms quickly and securely.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>© 2026 Room Rental System</p>
+
+        <p>Contact: support@roomrental.com</p>
+
+    </footer>
+    <div id="toast-container"></div>
+
+</body>
+<script src="../JavaScript/message.js"></script>
+<script src="../JavaScript/hamburger.js"></script>
+<script src="../JavaScript/Index/auth-ui.js"></script>
+
+</html>

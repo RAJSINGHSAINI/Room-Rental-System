@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="System Blueprint">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" connect="1" arrows="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- CLIENT -->
+        <mxCell id="client" value="CLIENT (Browser)\nHTML / CSS / JS" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="220" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- API SERVER -->
+        <mxCell id="server" value="BACKEND SERVER (Node.js + Express)" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="350" y="250" width="300" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- CONTROLLERS -->
+        <mxCell id="controllers" value="Controllers\nAuth | Home | Booking" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="380" y="280" width="240" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- MIDDLEWARE -->
+        <mxCell id="middleware" value="Middleware\nAuth / JWT / CORS" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="380" y="370" width="240" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MODELS -->
+        <mxCell id="models" value="Models (Mongoose)\nUser | Home | Booking" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="720" y="260" width="260" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- DATABASE -->
+        <mxCell id="db" value="MongoDB Database" style="shape=cylinder" vertex="1" parent="1">
+          <mxGeometry x="780" y="420" width="180" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- FLOWS -->
+
+        <!-- Client to Server -->
+        <mxCell edge="1" source="client" target="server" parent="1" value="HTTP Requests (REST API)">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Server to Client -->
+        <mxCell edge="1" source="server" target="client" parent="1" value="JSON Response">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Controllers to Middleware -->
+        <mxCell edge="1" source="controllers" target="middleware" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Middleware to Models -->
+        <mxCell edge="1" source="middleware" target="models" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Models to DB -->
+        <mxCell edge="1" source="models" target="db" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- DB to Models -->
+        <mxCell edge="1" source="db" target="models" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

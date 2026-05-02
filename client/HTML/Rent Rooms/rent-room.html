@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rent Your Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/message.css">
+    <link rel="stylesheet" href="../../CSS/rentRoom/rent.css">
+
+</head>
+
+<body>
+<div id="toast-container"></div>
+    <!--  Navbar -->
+    <div class="navbar">
+        <h2 class="logo">Room Rental</h2>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../Profile/profile.html">Profile</a>
+            <a id="logout" href="#">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!--  User Homes -->
+        <div class="card">
+            <h3>Your Listed Homes</h3>
+            <div id="home-container">
+                <div class="home">
+                    <img class="cover" src="https://via.placeholder.com/400x200">
+
+                    <div class="home-content">
+                        <p><strong>Title:</strong> Cozy Apartment</p>
+                        <p><strong>City:</strong> Haldwani</p>
+                        <p><strong>Price:</strong> ₹1500/night</p>
+                        <p><strong>Guests:</strong> 2 | 🛏 1 | 🛁 1</p>
+
+                        <div class="gallery">
+                            <img src="https://via.placeholder.com/60">
+                            <img src="https://via.placeholder.com/60">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--  Add New Home -->
+        <div class="card">
+            <h3>Add New Home</h3>
+
+            <form id="roomForm" enctype="multipart/form-data">
+
+                <input type="text" name="title" placeholder="Title" required>
+                <textarea name="description" placeholder="Description" required></textarea>
+
+                <input type="number" name="pricePerNight" placeholder="Price per Night" required>
+
+                <!-- Address -->
+                <label>Address</label>
+                <input required type="text" name="street" placeholder="Street">
+
+                <div class="row">
+                    <input required type="text" name="city" placeholder="City">
+                    <input required type="text" name="state" placeholder="State">
+                </div>
+
+                <div class="row">
+                    <input required type="text" name="pincode" placeholder="Pincode">
+                    <input required type="email" name="contact" placeholder="Contact Email">
+                </div>
+
+                <!-- Property Details -->
+                <div class="row">
+                    <input required type="number" name="maxGuests" placeholder="Guests">
+                    <input required type="number" name="bedrooms" placeholder="Bedrooms">
+                    <input required type="number" name="bathrooms" placeholder="Bathrooms">
+                </div>
+
+                <!-- Images -->
+                <label>Cover Image</label>
+                <input id="coverImage" type="file" name="coverImage" accept="image/*">
+
+                <div id="coverPreview" class="preview"></div>
+
+                <label>Other Images</label>
+                <input type="file" id="images" name="images" multiple accept="image/*">
+
+                <div id="imagesPreview" class="preview"></div>
+
+                <button type="submit">Add Home</button>
+
+            </form>
+        </div>
+        <div class="card">
+            <h3 style=" margin:1rem 0;">Your Rented Rooms</h3>
+            <div class="booked-room-container">
+
+                <div class=" home-card rented-room">
+                    <div class="wrap-up">
+
+                        <div class="cover-image">
+                            <img src="http://192.168.0.120:8080/uploads/1774016177158-882780-house2.png" alt="">
+                        </div>
+                        <div class="rent-info home-info">
+                            <h4 id="title">My Home</h4>
+                            <h4>Total Payments: ₹5600</h4>
+                            <span>Total Bookings: 5</span>
+                            <span>Total Days: 5</span>
+                        </div>
+                    </div>
+                    <div class=" flex-align-center see-more" style="margin: 0 1rem;">
+                        <button id="details">See Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../../JavaScript/message.js"></script>
+<script src="../../JavaScript/rentRooms/rentRooms.js"></script>
+
+</html>

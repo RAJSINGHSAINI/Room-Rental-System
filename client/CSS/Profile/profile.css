@@ -1,0 +1,180 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #2c3e50;
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+/* LOGOUT */
+#logoutBtn {
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#logoutBtn:hover {
+    color: #f39c12;
+}
+
+/* PAGE TITLE */
+.page-title {
+    text-align: center;
+    margin: 30px 0;
+    color: #2c3e50;
+}
+
+/* CONTAINER */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* CARD */
+.profile-card {
+    width: 400px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* HEADINGS */
+.profile-card h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+.profile-card h3 {
+    margin-top: 15px;
+    color: #555;
+}
+
+/* INPUTS */
+.profile-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* BUTTON */
+.profile-card button {
+    width: 100%;
+    padding: 12px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.profile-card button:hover {
+    background: #34495e;
+}
+
+/* TEXT */
+.profile-card p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+/* STATUS */
+#verifyStatus {
+    font-weight: bold;
+}
+
+/* VERIFIED */
+.verified {
+    color: green;
+}
+
+/* NOT VERIFIED */
+.not-verified {
+    color: red;
+}
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 15px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+    #logoutBtn{
+        font-size: 10px;
+    }
+    .home-content {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .home-info {
+        gap: 6px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        font-size: 13px;
+        padding: 7px;
+    }
+
+    .modal-box {
+        width: 90%;
+    }
+}

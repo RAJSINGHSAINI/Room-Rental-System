@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings</title>
+
+    <link rel="stylesheet" href="../../CSS/message.css">
+    <link rel="stylesheet" href="../../CSS/Index/index.css">
+    <link rel="stylesheet" href="../../CSS/myBooking/booking.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">RoomRental</div>
+
+        <ul class="nav-links">
+
+            <li><a href="../index.html">About</a></li>
+
+            <li><a href="/client/HTML/ListedRooms/listed-rooms.html">Listed Rooms</a></li>
+
+            <li><a href="/client/HTML/myBooking/bookings.html" class="protected">My Bookings</a></li>
+
+            <li><a href="/client/HTML/Wishlist/wishlist.html" class="protected">Wishlist</a></li>
+
+            <li><a href="/client/HTML/Rent Rooms/rent-room.html" class="protected">Rent Your Room</a></li>
+
+            <li class="authLink">
+                <a href="/client/HTML/Register/register.html">Login / Signup</a>
+            </li>
+
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <path
+                    d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z" />
+            </svg>
+        </div>
+        <ul class="ham-links">
+
+            <li><a href="../index.html">About</a></li>
+
+            <li><a href="/client/HTML/ListedRooms/listed-rooms.html">Listed Rooms</a></li>
+
+            <li><a href="/client/HTML/myBooking/bookings.html" class="protected">My Bookings</a></li>
+
+            <li><a href="/client/HTML/Wishlist/wishlist.html" class="protected">Wishlist</a></li>
+
+            <li><a href="/client/HTML/Rent Rooms/rent-room.html" class="protected">Rent Your Room</a></li>
+
+            <li class="authLink-ham">
+                <a href="/client/HTML/Register/register.html">Login / Signup</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <section class="bookings-section">
+        <h2 class="heading">My Bookings</h2>
+
+        <div id="bookingsContainer" class="all-booking-container">
+            <div class=" wrap-up">
+                <h3 style="margin: 10px 5px;">Your Current Bookings</h3>
+                <div class="current-booking bookings-container"></div>
+
+            </div>
+            <div class="wrap-up">
+                <h3 style="margin: 10px 5px;">history</h3>
+                <div class="history-booking bookings-container">
+                </div>
+
+            </div>
+            <!-- Dynamic Cards -->
+        </div>
+    </section>
+
+    <!-- DETAILS MODAL -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeDetailsModal()">&times;</span>
+
+            <h2>Booking Details</h2>
+
+            <div class="modal-section">
+                <h3>Room Info</h3>
+                <p><strong>Title:</strong> <span id="m-title"></span></p>
+                <p><strong>Description:</strong> <span id="m-description"></span></p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Owner Details</h3>
+                <p><strong>Name:</strong> <span id="m-owner-name"></span></p>
+                <p><strong>Email:</strong> <span id="m-owner-email"></span></p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Booking Info</h3>
+                <p><strong>Check-In:</strong> <span id="m-checkin"></span></p>
+                <p><strong>Check-Out:</strong> <span id="m-checkout"></span></p>
+                <p><strong>Total Days:</strong> <span id="m-days"></span></p>
+                <p><strong>Total Price:</strong> ₹<span id="m-price"></span></p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Your Info</h3>
+                <p><strong>Name:</strong> <span id="m-user-name"></span></p>
+                <p><strong>Email:</strong> <span id="m-user-email"></span></p>
+                <p><strong>Phone:</strong> <span id="m-phone"></span></p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Special Request</h3>
+                <p id="m-request"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANCEL MODAL -->
+    <div id="cancelModal" class="modal">
+        <div class="modal-box cancel-booking">
+            <span class="close-btn" onclick="closeCancelModal()">&times;</span>
+            <div style="font-weight: bold;">Are you sure you want to cancel?</div>
+            <button id="cancelConfirm" class="style-btn">Yes</button>
+        </div>
+    </div>
+    <div id="toast-container"></div>
+</body>
+<script src="../../JavaScript/message.js"></script>
+<script src="../../JavaScript/hamburger.js"></script>
+<script src="../../JavaScript/Index/auth-ui.js"></script>
+<script src="../../JavaScript/myBookings/booking.js"></script>
+
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/message.css">
+    <link rel="stylesheet" href="../../CSS/Profile/profile.css">
+</head>
+
+<body>
+<div id="toast-container"></div>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">RoomRental</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li class="protected"><a href="../myBooking/bookings.html">My Bookings</a></li>
+            <li class="protected"><a href="../Wishlist/wishlist.html">Wishlist</a></li>
+            <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+    </div>
+
+    <h1 class="page-title">My Profile</h1>
+
+    <div class="profile-container">
+
+        <!-- PERSONAL INFO -->
+        <section class="profile-card">
+
+            <h2>Personal Information</h2>
+
+            <form id="profileForm">
+
+                <label>Name</label>
+                <input type="text" id="name">
+
+                <h3>Address</h3>
+
+                <input type="text" id="street" placeholder="Street">
+                <input type="text" id="city" placeholder="City">
+                <input type="text" id="state" placeholder="State">
+                <input type="text" id="pincode" placeholder="Pincode">
+
+                <button type="submit">Update Profile</button>
+
+            </form>
+
+        </section>
+
+
+        <!-- EMAIL INFO -->
+        <section class="profile-card">
+
+            <h2>Email Information</h2>
+
+            <p><strong>Email:</strong> <span id="email"></span></p>
+
+            <p>
+                <strong>Status:</strong>
+                <span id="verifyStatus"></span>
+            </p>
+
+            <div style="display: flex; gap: 10px;" class="btns">
+                <!-- you can add verify button here -->
+            </div>
+
+        </section>
+
+    </div>
+<script src="../../JavaScript/message.js"></script>
+
+    <script src="../../JavaScript/Profile/profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/message.css">
+    <link rel="stylesheet" href="../../CSS//Register/regiterForm.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR (same as dashboard) -->
+<div class="navbar">
+    <div class="logo">RoomRental</div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../Login/login.html">Login</a></li>
+    </ul>
+</div>
+
+    <div class="form-container">
+
+        <h2>Create Account</h2>
+
+        <form id="registerForm">
+
+            <input type="text" id="name" placeholder="Name" required>
+
+            <input type="email" id="email" placeholder="Email" required>
+            <p class="alertMessage"></p>
+            <input type="password" id="password" placeholder="Password" required>
+
+            <h3>Address</h3>
+
+            <input required type="text" id="street" placeholder="Street">
+
+            <input required type="text" id="city" placeholder="City">
+
+            <input required type="text" id="state" placeholder="State">
+
+            <input required type="text" id="pincode" placeholder="Pincode">
+
+            <button id="registerFormbtn" type="submit">Register</button>
+
+        </form>
+
+        <p>Already have an account?
+            <a style="color: #f39c12; text-decoration: none" href="../Login/login.html">login</a>
+        </p>
+
+    </div>
+
+    <div id="toast-container"></div>
+</body>
+<script src="../../JavaScript/message.js"></script>
+<script src="../../JavaScript/Register/register.js"></script>
+
+</html>

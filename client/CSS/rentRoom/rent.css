@@ -1,0 +1,619 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+}
+
+#home-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
+.home-card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    transition: all 0.3s ease;
+}
+
+.home-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.home-image {
+    position: relative;
+}
+
+.home-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.available {
+    color: yellowgreen;
+}
+
+.not-available {
+    color: #f39c12;
+
+}
+
+.price {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: #64748b;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.home-content {
+    padding: 16px;
+}
+
+.title {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+    color: #222;
+}
+
+.location {
+    font-size: 13px;
+    color: #777;
+    margin: 6px 0;
+}
+
+.description {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #555;
+    line-height: 1.4;
+}
+
+.home-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+
+.info-item {
+    background: #f0f0f0;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.home-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating {
+    font-weight: 500;
+}
+
+.status {
+    font-weight: bold;
+    background: #e6f9f0;
+    color: #1e293b;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+/* Edit Button */
+.edit-btn {
+    flex: 1;
+    background: #151a23;
+    color: white;
+    border: none;
+    padding: 8px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-btn:hover {
+    background: #4e6281;
+}
+
+/* Delete Button */
+.delete-btn {
+    flex: 1;
+    transition: all 0.3s ease;
+    background: #1e293b;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #151a23;
+}
+
+body {
+    background: #f4f6f9;
+}
+
+/* Navbar */
+.navbar {
+    background: #1e293b;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*  Layout */
+.container {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+}
+
+/*  Card */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/*  Home Card */
+.home {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.home img.cover {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.home-content {
+    padding: 10px;
+}
+
+.gallery {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.gallery img {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.row input {
+    flex: 1;
+}
+
+label {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+button {
+    padding: 12px;
+    background: #1e293b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2e3642;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #2c3e50;
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+.preview {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.preview img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.modal-box h3 {
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.modal-box p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.cancel-btn {
+    flex: 1;
+    background: #27262a;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background: #34323a;
+}
+
+.delete-btn {
+    flex: 1;
+    background: #1e293b;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #151a23;
+}
+
+.container> :last-child {
+    grid-column: 1 / -1;
+}
+
+.rented-room {
+    min-height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.wrap-up {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cover-image {
+    margin: 1rem;
+}
+
+.cover-image img {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 140px;
+}
+
+.rent-info {
+    flex-direction: column;
+    position: relative;
+    bottom: -20%;
+}
+
+.flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+/* HOME INFO */
+.home-info {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.home-title {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* ROW LAYOUT */
+.stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* STAT BOX */
+.stat-box {
+    flex: 1;
+    min-width: 120px;
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.stat-box p {
+    font-size: 12px;
+    color: #777;
+}
+
+.stat-box h3 {
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+/* Hover */
+.stat-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme colors */
+.stat-box.active {
+    border-top: 3px solid #27ae60;
+}
+
+.stat-box.completed {
+    border-top: 3px solid #2980b9;
+}
+
+.stat-box.cancelled {
+    border-top: 3px solid #e74c3c;
+}
+
+.stat-box:first-child {
+    border-top: 3px solid #f39c12;
+}
+
+@media (max-width: 768px) {
+
+    /*  Navbar */     
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 6px 10px;
+        background: #2c3e50;
+        border-radius: 6px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    #home-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .home-image img {
+        height: 180px;
+    }
+
+    .rented-room {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .wrap-up {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .cover-image img {
+        height: auto;
+    }
+
+    .rent-info {
+        position: static;
+    }
+
+
+    .stat-box {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .see-more {
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .home-content {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .home-info {
+        gap: 6px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        font-size: 13px;
+        padding: 7px;
+    }
+
+    .modal-box {
+        width: 90%;
+    }
+}
+
+.see-more{
+    margin: 0 1rem;
+}

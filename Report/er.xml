@@ -1,0 +1,129 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Chen ER Diagram">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ENTITIES -->
+
+        <!-- User -->
+        <mxCell id="user" value="User" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="300" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Home -->
+        <mxCell id="home" value="Home" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="700" y="100" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Booking -->
+        <mxCell id="booking" value="Booking" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- RELATIONSHIPS -->
+
+        <!-- books -->
+        <mxCell id="r1" value="books" style="shape=rhombus;" vertex="1" parent="1">
+          <mxGeometry x="250" y="300" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- reserved -->
+        <mxCell id="r2" value="reserved" style="shape=rhombus;" vertex="1" parent="1">
+          <mxGeometry x="550" y="300" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- owns -->
+        <mxCell id="r3" value="owns" style="shape=rhombus;" vertex="1" parent="1">
+          <mxGeometry x="550" y="150" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ATTRIBUTES (User) -->
+        <mxCell id="u1" value="user_id (PK)" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="u2" value="name" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="20" y="300" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="u3" value="email" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="60" y="380" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ATTRIBUTES (Home) -->
+        <mxCell id="h1" value="home_id (PK)" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="750" y="20" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="h2" value="title" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="850" y="100" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="h3" value="pricePerNight" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="750" y="200" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ATTRIBUTES (Booking) -->
+        <mxCell id="b1" value="booking_id (PK)" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="420" y="220" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="b2" value="checkInDate" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="350" y="400" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="b3" value="checkOutDate" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="520" y="400" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- CONNECTIONS -->
+
+        <!-- User - books -->
+        <mxCell edge="1" source="user" target="r1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- books - Booking -->
+        <mxCell edge="1" source="r1" target="booking" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Booking - reserved -->
+        <mxCell edge="1" source="booking" target="r2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- reserved - Home -->
+        <mxCell edge="1" source="r2" target="home" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- User - owns -->
+        <mxCell edge="1" source="user" target="r3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- owns - Home -->
+        <mxCell edge="1" source="r3" target="home" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Attribute connections -->
+        <mxCell edge="1" source="u1" target="user" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="u2" target="user" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="u3" target="user" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell edge="1" source="h1" target="home" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="h2" target="home" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="h3" target="home" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell edge="1" source="b1" target="booking" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="b2" target="booking" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="b3" target="booking" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

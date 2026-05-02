@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../CSS/message.css">
+    <link rel="stylesheet" href="../../CSS/Login/login.css">
+</head>
+
+<body>
+
+<!-- NAVBAR (same as dashboard) -->
+<div class="navbar">
+    <div class="logo">RoomRental</div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../Register/register.html">Register</a></li>
+    </ul>
+</div>
+
+<!-- LOGIN FORM -->
+
+<div class="form-container">
+
+    <h2>Login</h2>
+
+    <form id="loginForm">
+
+        <input type="email" id="email" placeholder="Enter Email" required>
+
+        <input type="password" id="password" placeholder="Enter Password" required>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <p class="forgot">
+        <a href="../Login/forget.html">Forgot Password?</a>
+    </p>
+
+    <p id="message"></p>
+
+    <p class="switch">
+        Don't have an account? 
+        <a href="../Register/register.html">Register</a>
+    </p>
+
+</div>
+<div id="toast-container"></div>
+<script src="../../JavaScript/message.js"></script>
+<script src="../../JavaScript/Login/login.js"></script>
+
+</body>
+</html>

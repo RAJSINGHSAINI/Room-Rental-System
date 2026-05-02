@@ -1,0 +1,117 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Advanced MVC">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" connect="1" arrows="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- VIEW LAYER -->
+        <mxCell id="view" value="VIEW (Client)\nHTML / CSS / JS\nFetch API" style="shape=rectangle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="220" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- CONTROLLERS -->
+        <mxCell id="auth" value="Auth Controller\n(Login/Register)" style="shape=rectangle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="350" y="150" width="220" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="homeC" value="Home Controller\n(Add / Update / Delete)" style="shape=rectangle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="350" y="300" width="220" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="bookingC" value="Booking Controller\n(Book / Cancel)" style="shape=rectangle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="350" y="450" width="220" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- MIDDLEWARE -->
+        <mxCell id="middleware" value="Auth Middleware\n(JWT / Cookies)" style="shape=rectangle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="650" y="300" width="220" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- MODELS -->
+        <mxCell id="model" value="MODELS\nUser | Home | Booking\n(Mongoose)" style="shape=rectangle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="950" y="300" width="240" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- DATABASE -->
+        <mxCell id="db" value="MongoDB Database" style="shape=cylinder;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="500" width="160" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- FLOW CONNECTIONS -->
+
+        <!-- View to Controllers -->
+        <mxCell edge="1" source="view" target="auth" parent="1" value="Login/Register Request">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="view" target="homeC" parent="1" value="Home API Request">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="view" target="bookingC" parent="1" value="Booking Request">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Controllers to Middleware -->
+        <mxCell edge="1" source="homeC" target="middleware" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="bookingC" target="middleware" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Middleware to Models -->
+        <mxCell edge="1" source="middleware" target="model" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Auth directly to Model -->
+        <mxCell edge="1" source="auth" target="model" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Model to DB -->
+        <mxCell edge="1" source="model" target="db" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Return flows -->
+        <mxCell edge="1" source="db" target="model" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="model" target="middleware" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="middleware" target="homeC" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="middleware" target="bookingC" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="model" target="auth" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Response back to View -->
+        <mxCell edge="1" source="auth" target="view" parent="1" value="Response">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="homeC" target="view" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="bookingC" target="view" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

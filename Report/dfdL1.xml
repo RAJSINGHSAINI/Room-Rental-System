@@ -1,0 +1,80 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="DFD Level 1 Fixed">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- User -->
+        <mxCell id="user" value="User" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="200" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Admin -->
+        <mxCell id="admin" value="Admin" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="700" y="200" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Processes -->
+        <mxCell id="p1" value="1. User Management" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="200" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p2" value="2. Room Management" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="450" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p3" value="3. Booking System" style="ellipse;" vertex="1" parent="1">
+          <mxGeometry x="320" y="200" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Data Stores -->
+        <mxCell id="d1" value="User DB" style="shape=cylinder;" vertex="1" parent="1">
+          <mxGeometry x="200" y="350" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="d2" value="Room DB" style="shape=cylinder;" vertex="1" parent="1">
+          <mxGeometry x="350" y="350" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="d3" value="Booking DB" style="shape=cylinder;" vertex="1" parent="1">
+          <mxGeometry x="500" y="350" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="e1" edge="1" parent="1" source="user" target="p1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2" edge="1" parent="1" source="p1" target="d1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3" edge="1" parent="1" source="admin" target="p2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e4" edge="1" parent="1" source="p2" target="d2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5" edge="1" parent="1" source="user" target="p3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e6" edge="1" parent="1" source="p3" target="d3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e7" edge="1" parent="1" source="p2" target="p3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e8" edge="1" parent="1" source="p3" target="user">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Forgot Password</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../CSS/message.css">
+    <link rel="stylesheet" href="../../CSS/Login/forget.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">RoomRental</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Login/login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <!-- FORM -->
+
+    <div class="form-container">
+
+        <h2>New Email</h2>
+
+        <p class="subtitle">Enter new email to receive OTP</p>
+
+        <form id="changeForm">
+
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <button type="submit">Send OTP</button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </div>
+    <div id="toast-container"></div>
+    <script src="../../JavaScript/message.js"></script>
+    <script src="../../JavaScript/Change/change.js"></script>
+
+</body>
+
+</html>
