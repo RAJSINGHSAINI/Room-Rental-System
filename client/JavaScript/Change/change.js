@@ -21,7 +21,7 @@ document.getElementById("changeForm").addEventListener("submit", async (e) => {
     }
 
     try {
-        const res = await fetch("http://192.168.0.112:8080/api/auth/send-verify-otp", {
+        const res = await fetch("/api/auth/send-verify-otp", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

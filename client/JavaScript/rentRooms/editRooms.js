@@ -39,7 +39,7 @@ console.log(homeID.toString());
 fillHomeDetails(homeID)
 async function fillHomeDetails(homeID) {
     try {
-        const response = await fetch(`http://192.168.0.112:8080/api/home/get-home/${homeID}`, {
+        const response = await fetch(`/api/home/get-home/${homeID}`, {
             method: "GET",
             credentials: "include"
         });
@@ -81,7 +81,7 @@ async function fillHomeDetails(homeID) {
 
         if (home.coverImage) {
             const img = document.createElement("img");
-            img.src = `http://192.168.0.112:8080/uploads/${home.coverImage}`;
+            img.src = `/uploads/${home.coverImage}`;
             coverPreview.appendChild(img);
         }
 
@@ -92,7 +92,7 @@ async function fillHomeDetails(homeID) {
         if (home.images && home.images.length > 0) {
             home.images.forEach(image => {
                 const img = document.createElement("img");
-                img.src = `http://192.168.0.112:8080/uploads/${image}`;
+                img.src = `/uploads/${image}`;
                 imagesPreview.appendChild(img);
             });
         }
@@ -119,7 +119,7 @@ form.addEventListener('submit', e => {
 })
 async function saveHomeDetails(form) {
 
-    const saveResponse = await fetch("http://192.168.0.112:8080/api/home/save-home", {
+    const saveResponse = await fetch("/api/home/save-home", {
         method: "PUT",
         body: form,
         credentials: "include"

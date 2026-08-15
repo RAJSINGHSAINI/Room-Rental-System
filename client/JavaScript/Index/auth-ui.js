@@ -4,7 +4,7 @@ async function checkLogin() {
 
     try {
 
-        const res = await fetch("http://192.168.0.112:8080/api/auth/is-auth", {
+        const res = await fetch("/api/auth/is-auth", {
             method: "POST",
             credentials: "include"
         });
@@ -47,7 +47,7 @@ checkLogin();
 
 async function logoutUser() {
 
-    const res = await fetch("http://192.168.0.112:8080/api/auth/logout", {
+    const res = await fetch("/api/auth/logout", {
 
         method: "POST",
 

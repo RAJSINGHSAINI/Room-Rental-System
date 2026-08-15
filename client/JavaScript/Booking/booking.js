@@ -5,7 +5,7 @@ const homeID = params.get("id");
 
 async function getHome() {
     try {
-        const response = await fetch(`http://192.168.0.112:8080/api/home/get-home/${homeID}`, {
+        const response = await fetch(`/api/home/get-home/${homeID}`, {
             method: "GET",
             credentials: "include"
         });
@@ -21,7 +21,7 @@ async function getHome() {
         pricePerNight = home.pricePerNight;
 
         document.getElementById('title').innerText = home.title;
-        document.getElementById('coverImage').src = `http://192.168.0.112:8080/uploads/${home.coverImage}`;
+        document.getElementById('coverImage').src = `/uploads/${home.coverImage}`;
         document.getElementById('price').innerText = `₹${home.pricePerNight}/Night`;
         document.getElementById('pricePerNight').innerText = `₹${home.pricePerNight}`;
         document.getElementById('location').innerText =
@@ -151,7 +151,7 @@ document.getElementById("bookingForm").addEventListener("submit", async function
         btn.disabled = true;
         btn.innerText = "Booking...";
 
-        const response = await fetch('http://192.168.0.112:8080/api/booking/book', {
+        const response = await fetch('/api/booking/book', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

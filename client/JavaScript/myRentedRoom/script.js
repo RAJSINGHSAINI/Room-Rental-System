@@ -4,7 +4,7 @@ const homeID = params.get("id");
 
 async function loadBooking() {
 
-    const bookingResponse = await fetch(`http://192.168.0.112:8080/api/booking/get-home-bookings/${homeID}`, {
+    const bookingResponse = await fetch(`/api/booking/get-home-bookings/${homeID}`, {
         method: "GET",
         credentials: 'include'
     });
@@ -81,7 +81,7 @@ container.addEventListener("click", async (e) => {
         }
 
         try {
-            const res = await fetch(`http://192.168.0.112:8080/api/booking/update-status/${bookingId}`, {
+            const res = await fetch(`/api/booking/update-status/${bookingId}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"

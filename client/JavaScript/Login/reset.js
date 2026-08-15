@@ -23,7 +23,7 @@ document.getElementById("resetForm").addEventListener("submit", async (e) => {
         return;
     }
 
-    const res = await fetch("http://192.168.0.112:8080/api/auth/reset-password", {
+    const res = await fetch("/api/auth/reset-password", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

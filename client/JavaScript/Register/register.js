@@ -33,7 +33,7 @@ form.addEventListener("submit", async (e) => {
     try {
         document.getElementById("registerFormbtn").disabled = true;
 
-        const response = await fetch("http://192.168.0.112:8080/api/auth/register", {
+        const response = await fetch("/api/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -59,7 +59,7 @@ form.addEventListener("submit", async (e) => {
             return;
         }
 
-        const otpResponse = await fetch("http://192.168.0.112:8080/api/auth/send-verify-otp", {
+        const otpResponse = await fetch("/api/auth/send-verify-otp", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

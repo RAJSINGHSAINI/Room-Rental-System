@@ -1,7 +1,7 @@
 
 async function getHomes() {
 
-    const response = await fetch("http://192.168.0.112:8080/api/home/get-wish-homes", {
+    const response = await fetch("/api/home/get-wish-homes", {
         method: "GET",
         credentials: "include"
     })
@@ -52,7 +52,7 @@ async function getHomes() {
 
         card.innerHTML = `
     <div class="home-image">
-    <img src="http://192.168.0.112:8080/uploads/${home.coverImage}">
+    <img src="/uploads/${home.coverImage}">
     <div class="price">₹${home.pricePerNight}/night</div>
     </div>
     
@@ -92,7 +92,7 @@ getHomes();
 
 async function removeWish(homeID) {
 
-    const wishResponse = await fetch('http://192.168.0.112:8080/api/user/wish', {
+    const wishResponse = await fetch('/api/user/wish', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -120,7 +120,7 @@ async function handleBooking(homeID) {
     try {
         console.log(homeID);
 
-        const res = await fetch(`http://192.168.0.112:8080/api/home/check-lists-home/${homeID}`, {
+        const res = await fetch(`/api/home/check-lists-home/${homeID}`, {
             method: "GET",
             credentials: "include",
         });

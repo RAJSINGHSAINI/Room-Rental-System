@@ -5,7 +5,7 @@ let selectedBookingId = null;
 let bookingsData = [];
 
 async function getAllBookings() {
-    const res = await fetch('http://192.168.0.112:8080/api/booking/get-all-bookings', {
+    const res = await fetch('/api/booking/get-all-bookings', {
         method: 'GET',
         credentials: 'include',
     });
@@ -13,7 +13,7 @@ async function getAllBookings() {
     const data = await res.json();
 
     if (!data.success) {
-        return showMessage(data.message,"error");
+        return showMessage(data.message, "error");
     }
 
     bookingsData = data.bookings;
@@ -35,7 +35,7 @@ function renderBookings(bookings) {
             Hcontainer.innerHTML += `
             <div class="booking-card">
             
-            <img src="http://192.168.0.112:8080/uploads/${e.home.coverImage}" class="booking-img">
+            <img src="/uploads/${e.home.coverImage}" class="booking-img">
             
             <div class="booking-content">
             
@@ -68,7 +68,7 @@ function renderBookings(bookings) {
             container.innerHTML += `
                 <div class="booking-card">
                 
-                <img src="http://192.168.0.112:8080/uploads/${e.home.coverImage}" class="booking-img">
+                <img src="/uploads/${e.home.coverImage}" class="booking-img">
                 
                 <div class="booking-content">
                 
@@ -174,7 +174,7 @@ document.getElementById("cancelConfirm").addEventListener("click", async () => {
     document.getElementById("cancelConfirm").disabled = true;
     if (!selectedBookingId) return;
 
-    const res = await fetch('http://192.168.0.112:8080/api/booking/cancel-booking', {
+    const res = await fetch('/api/booking/cancel-booking', {
         method: 'PUT',
         headers: {
             "Content-Type": "application/json"
@@ -188,7 +188,7 @@ document.getElementById("cancelConfirm").addEventListener("click", async () => {
 
     const data = await res.json();
 
-    showMessage(data.message,"success");
+    showMessage(data.message, "success");
 
     if (data.success) {
         closeCancelModal();

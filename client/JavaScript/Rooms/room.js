@@ -2,14 +2,14 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 async function loadHome() {
   try {
-    const res = await fetch(`http://192.168.0.112:8080/api/home/get-home/${id}`, {
+    const res = await fetch(`/api/home/get-home/${id}`, {
       credentials: 'include'
     });
     const data = await res.json();
 
     const home = data.home;
 
-    const baseURL = "http://192.168.0.112:8080/uploads/";
+    const baseURL = "/uploads/";
 
     console.log(data);
 
@@ -56,7 +56,7 @@ async function loadHome() {
 loadHome();
 
 document.getElementById('book-btn').addEventListener('click', async () => {
-  const res = await fetch(`http://192.168.0.112:8080/api/home/check-lists-home/${id}`, {
+  const res = await fetch(`/api/home/check-lists-home/${id}`, {
     method: "GET",
     credentials: "include",
   });
