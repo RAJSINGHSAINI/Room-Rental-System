@@ -51,7 +51,7 @@ async function addHome(e) {
     console.log(formData);
 
     try {
-        const response = await fetch("http://192.168.0.120:8080/api/home/add-home", {
+        const response = await fetch("http://192.168.0.112:8080/api/home/add-home", {
             method: "POST",
             body: formData,
             credentials: "include"
@@ -79,7 +79,7 @@ function cardTemplate(home) {
 
 <!--  Cover Image -->
 <div class="home-image">
-    <img src="http://192.168.0.120:8080/uploads/${home.coverImage}" alt="Home Image">
+    <img src="http://192.168.0.112:8080/uploads/${home.coverImage}" alt="Home Image">
     <span class="price">${home.pricePerNight}/ night</span>
 </div>
 
@@ -113,7 +113,7 @@ function cardTemplate(home) {
 }
 async function getRooms() {
 
-    const response = await fetch("http://192.168.0.120:8080/api/home/get-homes", {
+    const response = await fetch("http://192.168.0.112:8080/api/home/get-homes", {
         method: "GET",
         credentials: "include"
     })
@@ -147,7 +147,7 @@ getRooms();
 
 async function logoutUser() {
 
-    const res = await fetch("http://192.168.0.120:8080/api/auth/logout", {
+    const res = await fetch("http://192.168.0.112:8080/api/auth/logout", {
 
         method: "POST",
 
@@ -197,7 +197,7 @@ async function delHome(homeId) {
     // Delete button
     modal.querySelector('.delete-btn').onclick = async () => {
         try {
-            const delResponse = await fetch(`http://192.168.0.120:8080/api/home/del-home/${homeId}`, {
+            const delResponse = await fetch(`http://192.168.0.112:8080/api/home/del-home/${homeId}`, {
                 method: "DELETE",
                 credentials: "include"
             });
@@ -220,7 +220,7 @@ async function delHome(homeId) {
 
 async function loadAllBookedRooms() {
 
-    const bookedResponse = await fetch('http://192.168.0.120:8080/api/booking/get-owner-home-bookings', {
+    const bookedResponse = await fetch('http://192.168.0.112:8080/api/booking/get-owner-home-bookings', {
         method: 'GET',
         credentials: 'include'
     })
@@ -242,7 +242,7 @@ async function loadAllBookedRooms() {
                     <div class="wrap-up">
 
                         <div class="cover-image">
-                            <img src="http://192.168.0.120:8080/uploads/${home.coverImage}" alt="">
+                            <img src="http://192.168.0.112:8080/uploads/${home.coverImage}" alt="">
                         </div>
 
                         <div class="rent-info ">

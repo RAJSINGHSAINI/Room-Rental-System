@@ -15,7 +15,7 @@ document.getElementById("forgotForm").addEventListener("submit", async (e) => {
     }
 
     try {
-        const res = await fetch("http://192.168.0.120:8080/api/auth/send-reset-otp", {
+        const res = await fetch("http://192.168.0.112:8080/api/auth/send-reset-otp", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

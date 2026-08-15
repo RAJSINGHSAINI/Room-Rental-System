@@ -3,7 +3,7 @@ let isSubmitting = false;
 
 async function loadProfile() {
 
-    const res = await fetch("http://192.168.0.120:8080/api/user/data", {
+    const res = await fetch("http://192.168.0.112:8080/api/user/data", {
         method: "GET",
         credentials: "include"
     })
@@ -46,7 +46,7 @@ async function loadProfile() {
     })
     async function logoutUser() {
 
-        const res = await fetch("http://192.168.0.120:8080/api/auth/logout", {
+        const res = await fetch("http://192.168.0.112:8080/api/auth/logout", {
 
             method: "POST",
 
@@ -77,7 +77,7 @@ async function loadProfile() {
             if (isSubmitting) return;
             isSubmitting = true;
             document.getElementById('verifyEmailBtn').disabled = true;
-            const otpResponse = await fetch('http://192.168.0.120:8080/api/auth/send-verify-otp', {
+            const otpResponse = await fetch('http://192.168.0.112:8080/api/auth/send-verify-otp', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -124,7 +124,7 @@ document.getElementById("profileForm").addEventListener("submit", async (e) => {
     const state = document.getElementById("state").value
     const pincode = document.getElementById("pincode").value
 
-    const response = await fetch("http://192.168.0.120:8080/api/user/update-data", {
+    const response = await fetch("http://192.168.0.112:8080/api/user/update-data", {
 
         method: "PUT",
 

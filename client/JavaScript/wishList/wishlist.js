@@ -1,14 +1,18 @@
 
 async function getHomes() {
 
-    const response = await fetch("http://192.168.0.120:8080/api/home/get-wish-homes", {
+    const response = await fetch("http://192.168.0.112:8080/api/home/get-wish-homes", {
         method: "GET",
         credentials: "include"
     })
 
     const data = await response.json();
+    const container = document.getElementById("home-container");
     if (!data.success) {
-        showMessage(data.message,"error");
+        showMessage(data.message, "error");
+        container.innerHTML = `
+        <h3>No Homes wished yet</h3>
+        `
         return;
     }
     console.log(data);
@@ -41,7 +45,6 @@ async function getHomes() {
 
 
 
-    const container = document.getElementById("home-container");
 
     homes.forEach(home => {
         const card = document.createElement("div");
@@ -49,7 +52,7 @@ async function getHomes() {
 
         card.innerHTML = `
     <div class="home-image">
-    <img src="http://192.168.0.120:8080/uploads/${home.coverImage}">
+    <img src="http://192.168.0.112:8080/uploads/${home.coverImage}">
     <div class="price">₹${home.pricePerNight}/night</div>
     </div>
     
@@ -89,7 +92,7 @@ getHomes();
 
 async function removeWish(homeID) {
 
-    const wishResponse = await fetch('http://192.168.0.120:8080/api/user/wish', {
+    const wishResponse = await fetch('http://192.168.0.112:8080/api/user/wish', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -104,10 +107,10 @@ async function removeWish(homeID) {
     const wishData = await wishResponse.json();
 
     if (!wishData.success) {
-        return showMessage(wishData.message,"error");
+        return showMessage(wishData.message, "error");
     }
     window.location.reload()
-    return showMessage(wishData.message,"error");
+    return showMessage(wishData.message, "error");
 
 }
 
@@ -117,7 +120,7 @@ async function handleBooking(homeID) {
     try {
         console.log(homeID);
 
-        const res = await fetch(`http://192.168.0.120:8080/api/home/check-lists-home/${homeID}`, {
+        const res = await fetch(`http://192.168.0.112:8080/api/home/check-lists-home/${homeID}`, {
             method: "GET",
             credentials: "include",
         });
@@ -125,7 +128,7 @@ async function handleBooking(homeID) {
         const data = await res.json();
 
         if (!data.success) {
-            showMessage(data.message,"error");
+            showMessage(data.message, "error");
             return;
         }
         window.location.href = `../Booking/booking.html?id=${homeID}`;
@@ -133,6 +136,6 @@ async function handleBooking(homeID) {
     } catch (error) {
         console.log(error);
 
-        showMessage("Something went wrong","error");
+        showMessage("Something went wrong", "error");
     }
 }

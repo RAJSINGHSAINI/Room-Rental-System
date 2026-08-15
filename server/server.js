@@ -20,7 +20,7 @@ connectDB()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: "http://192.168.0.120:5501",
+    origin: "http://192.168.0.112:5501",
     credentials: true
 }));
 

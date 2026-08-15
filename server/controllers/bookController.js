@@ -58,8 +58,11 @@ export const bookHome = async (req, res) => {
             ]
         });
 
-        if (existingBooking) {
-            return res.status(400).json({ success: false, message: "Room already booked for selected dates" });
+        if (existingBooking) {           
+            return res.json({ success: false, message: "Room already booked for selected dates",date: {
+                checkIn:existingBooking.checkInDate,
+                checkOut:existingBooking.checkOutDate
+            } });
         }
 
         const totalDays = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));

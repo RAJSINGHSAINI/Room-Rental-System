@@ -12,8 +12,8 @@
 
 <body>
 
-        
- <nav class="navbar">
+
+    <nav class="navbar">
 
         <div class="logo">RoomRental</div>
 
@@ -41,25 +41,25 @@
                     d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z" />
             </svg>
         </div>
-            <ul class="ham-links">
+        <ul class="ham-links">
 
-                <li><a href="../index.html">About</a></li>
+            <li><a href="../index.html">About</a></li>
 
-                <li><a href="/client/HTML/ListedRooms/listed-rooms.html">Listed Rooms</a></li>
+            <li><a href="/client/HTML/ListedRooms/listed-rooms.html">Listed Rooms</a></li>
 
-                <li><a href="/client/HTML/myBooking/bookings.html" class="protected">My Bookings</a></li>
+            <li><a href="/client/HTML/myBooking/bookings.html" class="protected">My Bookings</a></li>
 
-                <li><a href="/client/HTML/Wishlist/wishlist.html" class="protected">Wishlist</a></li>
+            <li><a href="/client/HTML/Wishlist/wishlist.html" class="protected">Wishlist</a></li>
 
-                <li><a href="/client/HTML/Rent Rooms/rent-room.html" class="protected">Rent Your Room</a></li>
+            <li><a href="/client/HTML/Rent Rooms/rent-room.html" class="protected">Rent Your Room</a></li>
 
-                <li class="authLink-ham">
-                    <a href="/client/HTML/Register/register.html">Login / Signup</a>
-                </li>
+            <li class="authLink-ham">
+                <a href="/client/HTML/Register/register.html">Login / Signup</a>
+            </li>
 
-            </ul>
+        </ul>
     </nav>
-<div id="toast-container"></div>
+    <div id="toast-container"></div>
     <!-- Main Container -->
     <div class="booking-container">
 
@@ -73,9 +73,9 @@
             <p id="location" class="room-location">📍 Haldwani, Uttarakhand</p>
 
             <div class="room-details">
-                <span id="bedrooms" >🛏 2 Bedrooms</span>
-                <span id="bathrooms" >🚿 1 Bathroom</span>
-                <span id="maxGuests" >👥 4 Guests</span>
+                <span id="bedrooms">🛏 2 Bedrooms</span>
+                <span id="bathrooms">🚿 1 Bathroom</span>
+                <span id="maxGuests">👥 4 Guests</span>
             </div>
 
             <h3 id="price" class="price">₹1500 / night</h3>
@@ -91,7 +91,7 @@
 
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" id="name"  name="name" required>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <!-- Dates -->
                 <div class="form-group">
@@ -107,7 +107,7 @@
                 <!-- Guests -->
                 <div class="form-group">
                     <label>Number of Guests</label>
-                    <input type="number" min="1" name="guests"   id="guests">
+                    <input type="number" min="1" name="guests" id="guests">
                 </div>
 
                 <!-- Contact Info -->
@@ -133,8 +133,15 @@
                     <p>Price per night: <span id="pricePerNight">₹1500</span></p>
                     <p>Total Days: <span id="totalDays">0</span></p>
                     <p class="total">Total Price: <span id="totalPrice">₹0</span></p>
-                </div>
 
+                </div>
+                <div class=" none dates price-summary">
+                    <h3 class="bookingDetails">these is the Days</h3>
+                    <div id="dateContainer">
+                        <div class="bookedDates">${data.date.checkIn}</div>
+                        <div class="bookedDates">${data.date.checkOut}</div>
+                    </div>
+                </div>
                 <!-- Submit -->
                 <button type="submit" class="book-btn">Confirm Booking</button>
 
@@ -153,10 +160,11 @@
         </div>
     </div>
 
-    
+
 </body>
 <script src="../../JavaScript/message.js"></script>
 <script src="../../JavaScript/hamburger.js"></script>
 <script src="../../JavaScript/Index/auth-ui.js"></script>
 <script src="../../JavaScript/Booking/booking.js"></script>
+
 </html>

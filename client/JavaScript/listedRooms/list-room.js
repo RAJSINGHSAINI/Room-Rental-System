@@ -2,7 +2,7 @@ let allHomes = []
 let verified = false;
 async function getHomes() {
     
-    const response = await fetch("http://192.168.0.120:8080/api/home/get-all-homes", {
+    const response = await fetch("http://192.168.0.112:8080/api/home/get-all-homes", {
         method: "GET",
         credentials: "include"
     })
@@ -58,7 +58,7 @@ function renderHomes(homes) {
 
         card.innerHTML = `
         <div class="home-image">
-        <img src="http://192.168.0.120:8080/uploads/${home.coverImage}">
+        <img src="http://192.168.0.112:8080/uploads/${home.coverImage}">
         <div class="price">₹${home.pricePerNight}/night</div>
         </div>
         
@@ -98,7 +98,7 @@ getHomes();
 
 async function addWish(homeID) {
 
-    const wishResponse = await fetch('http://192.168.0.120:8080/api/user/wish', {
+    const wishResponse = await fetch('http://192.168.0.112:8080/api/user/wish', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -128,7 +128,7 @@ async function handleBooking(homeID) {
             return showMessage("User not Verified","error")
         }
         
-        const res = await fetch(`http://192.168.0.120:8080/api/home/check-lists-home/${homeID}`, {
+        const res = await fetch(`http://192.168.0.112:8080/api/home/check-lists-home/${homeID}`, {
             method: "GET",
             credentials: "include",
         });
