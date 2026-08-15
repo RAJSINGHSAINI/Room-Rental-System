@@ -27,7 +27,7 @@ app.use(cors({
 // images
 
 app.use("/uploads", express.static("uploads"));
-
+app.use(express.static(path.join(__dirname, "../client")));
 // middleware
 app.get('/', (req, res, next) => {
     res.send("server is running")
@@ -39,5 +39,11 @@ app.use('/api/auth', authRouter)
 app.use('/api/user', userRouter)
 app.use('/api/home', homeRouter)
 app.use('/api/booking', bookingRouter)
+
+// expose runtime config for clients (optional)
+app.get('/config', (req, res) => {
+    const serverUrl = process.env.SERVER_URL || `http://localhost:${port}`
+    res.json({ serverUrl })
+})
 
 app.listen(port, "0.0.0.0", () => { console.log(`server running in port ${port}`) })
