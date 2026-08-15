@@ -161,7 +161,8 @@ export const sendVerifyOtp = async (req, res) => {
         };
 
         await transporter.sendMail(mailOptions);
-
+        console.log("Otp sended successfully");
+        
         return res.json({ success: true, message: 'OTP sent successfully' });
 
     } catch (error) {
